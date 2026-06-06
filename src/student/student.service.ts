@@ -34,4 +34,19 @@ export class StudentService {
         this.students[index] = { id, ...data }
         return this.students[index]
     }
+
+    // patch
+    patchStudent(id: number, data: Partial<{ name: string, age: number }>) {
+        const student = this.getStudentById(id);
+        Object.assign(student, data)
+        return student
+    }
+
+    // delete
+    deleteStudent(id: number) {
+        const index = this.students.findIndex((s) => s.id === id)
+        if (index === -1) throw new NotFoundException("Student Not Found!")
+        const deleted = this.students.splice(index, 1)
+        return {message: "Student Deleted", student: deleted[0]}
+    }
 }
