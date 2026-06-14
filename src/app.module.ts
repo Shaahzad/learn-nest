@@ -8,10 +8,11 @@ import { EmployeeModule } from './employee/employee.module';
 import { StudentModule } from './student/student.module';
 import { CustomerModule } from './customer/customer.module';
 import { MyNameController } from './my-name/my-name.controller';
+import { UserRolesController } from './user-roles/user-roles.controller';
 
 @Module({
   imports: [EmployeeModule, StudentModule, CustomerModule],
-  controllers: [AppController, UserController, ProductController, MyNameController],
+  controllers: [AppController, UserController, ProductController, MyNameController, UserRolesController],
   providers: [AppService, ProductService],
 })
 export class AppModule {}
