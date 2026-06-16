@@ -7,7 +7,7 @@ import { RolesGuard } from 'src/guards/roles/roles.guard';
 export class UserRolesController {
     @Get('admin-data')
     @UseGuards(RolesGuard)
-    @Roles(Role.Admin)
+    @Roles(Role.User)
     getAdmin(){
         return {message: 'only admin can access'}
     }
